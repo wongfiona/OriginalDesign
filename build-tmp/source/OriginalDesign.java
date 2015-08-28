@@ -1,3 +1,19 @@
+import processing.core.*; 
+import processing.data.*; 
+import processing.event.*; 
+import processing.opengl.*; 
+
+import java.util.HashMap; 
+import java.util.ArrayList; 
+import java.io.File; 
+import java.io.BufferedReader; 
+import java.io.PrintWriter; 
+import java.io.InputStream; 
+import java.io.OutputStream; 
+import java.io.IOException; 
+
+public class OriginalDesign extends PApplet {
+
 	int x1 = 200;
 	int y1 = 50;
 	int x2 = 189;
@@ -9,19 +25,19 @@
 	int b = 55;
 	int c = 56;
 
-void setup()
+public void setup()
 {
 	size(400, 400);
 }
 
-void draw()
+public void draw()
 {
 	stars();
  	buildings();
 
 }
 
-void stars()
+public void stars()
 {
 	background(16, 31, 74);
 	
@@ -89,7 +105,7 @@ void stars()
 
 }
 
-void buildings()
+public void buildings()
 {
 	fill(194, 192, 192);
 	stroke(0, 0, 0);
@@ -105,3 +121,12 @@ void buildings()
 	
 
 
+  static public void main(String[] passedArgs) {
+    String[] appletArgs = new String[] { "OriginalDesign" };
+    if (passedArgs != null) {
+      PApplet.main(concat(appletArgs, passedArgs));
+    } else {
+      PApplet.main(appletArgs);
+    }
+  }
+}
